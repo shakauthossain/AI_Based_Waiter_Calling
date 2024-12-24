@@ -1,0 +1,49 @@
+# Hand Raised Coffee Request System
+
+This project utilizes computer vision to detect when an employee raises their hand to request coffee. It tracks hand gestures using MediaPipe's hand tracking model and associates the requests with employees based on predefined zones in the video feed.
+
+## Features
+- **Hand Detection**: The system detects raised hands using MediaPipe's hand tracking model.
+- **Employee Identification**: Employees are identified based on their position in predefined zones in the video.
+- **Coffee Requests**: When an employee raises their hand, a coffee request is generated and displayed on the screen.
+- **Automatic Notifications**: A notification is sent to the designated person when a hand is raised for coffee.
+- **Request Expiry**: Coffee requests disappear after 5 seconds to keep the interface clean.
+- **Dynamic Zone Definition**: Zones can be defined interactively to adapt to different room layouts.
+
+## Requirements
+
+- Python 3.6+
+- OpenCV (`cv2`)
+- MediaPipe
+- Other dependencies: `time`, `mediapipe`, `numpy`, etc.
+
+Install the required packages:
+
+bash
+Copy code
+pip install -r requirements.txt
+If you don't have requirements.txt, you can manually install the necessary packages:
+
+bash
+Copy code
+pip install opencv-python mediapipe numpy
+Usage
+Running the Application:
+To run the application using your webcam:
+
+bash
+Copy code
+python main.py
+You will be prompted to define the zones interactively. Once the zones are defined, the system will start detecting raised hands and displaying the coffee requests. The requests will disappear after 5 seconds.
+
+Running with a Video File:
+To process a video file instead of the webcam, pass the video path as an argument:
+
+bash
+Copy code
+python main.py --video_path "path/to/your/video.mp4"
+
+Key Commands:
+Using mouse left button you can select and add zone for specific name/ person
+Press r to start processing the video after defining the zones.
+Press q to quit the application.
